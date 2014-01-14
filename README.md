@@ -1,0 +1,8 @@
+argparse (1.2.1)
+distribute (0.6.34)
+Django (1.6)
+djangorestframework (2.3.9)
+Markdown (2.3.1)
+Pygments (1.6)
+requests (2.1.0)
+wsgiref (0.1.2)

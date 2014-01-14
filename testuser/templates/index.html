@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function login(){
+			document.myform.action = '/testuser/index/'
+			document.myform.submit()
+		}
+
+		function register(){
+			document.myform.action = ''
+			document.myform.submit()
+		}
+	</script>
+</head>
+<body>
+	{%  if user.is_authenticated %}
+		Welcome, {{ user.username }}
+	{% else %}
+		<h1>Please Log In Or Sign In</h1>
+		<form method="post" name="myform">
+			{% csrf_token %}
+			UserName:<input type="text" name="username">
+			Password:<input type="password" name="password">
+			<button type="submit" onclick="login()">Login</button>
+			<button type="submit" onclick="register()">Register</button>
+		</form>
+	{% endif %}
+</body>
+</html>
