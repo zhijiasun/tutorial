@@ -1,0 +1,10 @@
+issue during the coding
+1.the sequence to find the templates
+	for example, there are two apps
+
+	testuser/
+		templates/index.html
+	formtest/
+		templates/index.html
+
+	in formtest app, it always find testuser/templates/index.html instead of formtest/templates/index.html, this is not corrcet.
