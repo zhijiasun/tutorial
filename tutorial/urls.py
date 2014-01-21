@@ -12,4 +12,5 @@ urlpatterns = patterns('',
     url(r'^',include('snippets.urls')),
     url(r'^',include('testuser.urls')),
     url(r'^',include('formtest.urls')),
+    url(r'^polls/',include('polls.urls')),
 )

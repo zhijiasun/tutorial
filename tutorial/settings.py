@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'snippets',
     'testuser',
     'formtest',
+    'polls',
 )
 
 MIDDLEWARE_CLASSES = (

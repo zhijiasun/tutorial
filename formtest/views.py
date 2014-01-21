@@ -7,10 +7,10 @@ from forms import Contact
 
 def contact(request):
 	if request.method == "POST":
+		print 'aaaaaaaaaa'
 		form = Contact(request.POST)
 		if form.is_valid():
 			return HttpResponseRedirect('/thanks/')
 	else:
 		form = Contact()
-	print 'aaaa'
-	return render(request,'index.html',{'form':form,})
+	return render(request,'form.html',{'form':form,})
