@@ -21,7 +21,7 @@ class JSONResponse(HttpResponse):
 
 
 @csrf_exempt
-def snippet_list(request):
+def snippet_list2(request):
 	if request.method == 'GET':
 		snippets = Snippet.objects.all()
 		serializer = SnippetSerializer(snippets,many=True)
@@ -36,6 +36,7 @@ def snippet_list(request):
 			return JSONResponse(serializer.error,status=400)
 
 
+"""
 @csrf_exempt
 def snippet_detail(request,pk):
 	print '!!!!'
@@ -66,3 +67,34 @@ def snippet_detail(request,pk):
 		snippet.delete()
 		return HttpResponse(status=204)
 
+"""
+
+"""
+refactor the views.py
+"""
+from rest_framework import status
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from snippets.models import Snippet
+from snippets.serializers import SnippetSerializer
+
+
+@api_view(['GET','POST'])
+def snippet_list(request):
+	if request.method == 'GET':
+		snippets = Snippet.objects.all()
+		serializer = SnippetSerializer(snippets,many=True)
+		return Response(serializer.data)
+	elif request.method == 'POST':
+		serializer = SnippetSerializer(data=request.DATA)
+		if serializer.is_valid():
+			serializer.save()
+			return Response(serializer.data,status=status.HTTP_201_CREATED)
+		return Response(serializer.errors,status=status.HTTP_404_BAD_REQUEST)
+
+
+
+
+@api_view(['GET','PUT','DELETE'])
+def snippet_detail(request,pk):
+	pass
