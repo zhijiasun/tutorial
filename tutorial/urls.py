@@ -13,4 +13,7 @@ urlpatterns = patterns('',
     url(r'^',include('testuser.urls')),
     url(r'^',include('formtest.urls')),
     url(r'^polls/',include('polls.urls')),
+    url(r'^',include('rest.urls')),
+    url(r'^weblog/',include('zinnia.urls')),
+    url(r'^comments/',include('django.contrib.comments.urls')),
 )

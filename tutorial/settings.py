@@ -36,11 +36,17 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.comments',
     'rest_framework',
     'snippets',
     'testuser',
     'formtest',
     'polls',
+    'tagging',
+    'mptt',
+    'zinnia',
+    'rest',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,3 +91,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+  'django.contrib.auth.context_processors.auth',
+  'django.core.context_processors.i18n',
+  'django.core.context_processors.request',
+  'zinnia.context_processors.version',  # Optional
+)
+
+
+SITE_ID=1
