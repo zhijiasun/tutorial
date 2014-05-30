@@ -45,8 +45,10 @@ INSTALLED_APPS = (
     'polls',
     'tagging',
     'mptt',
-    'zinnia',
+    # 'zinnia',
     'rest',
+    'registration',
+    'registration_defaults',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -101,3 +103,4 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 
 SITE_ID=1
+from registration_defaults.settings import *
