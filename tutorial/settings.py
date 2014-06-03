@@ -49,6 +49,7 @@ INSTALLED_APPS = (
     'rest',
     'registration',
     'registration_defaults',
+    'rest_auth',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -102,5 +103,16 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 
-SITE_ID=1
-from registration_defaults.settings import *
+SITE_ID = 1
+# from registration_defaults.settings import *
+REST_FRAMEWORK = {
+        'DEFAULT_AUTHENTICATION_CLASSES': (
+            'rest_framework.authentication.SessionAuthentication',
+            ),
+
+        'DEFAULT_PERMISSION_CLASSES': (
+            'rest_framework.permissions.IsAuthenticated'
+            )
+        }
+REST_REGISTRATION_BACKEND = 'registration.backends.simple.views.RegistrationView'
+# REST_PROFILE_MODULE = 'accounts.UserProfile'
