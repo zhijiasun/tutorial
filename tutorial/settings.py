@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.comments',
     'rest_framework',
+    'rest_framework.authtoken',
     'snippets',
     'testuser',
     'formtest',
