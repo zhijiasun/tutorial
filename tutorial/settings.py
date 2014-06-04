@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'registration',
     'registration_defaults',
     'rest_auth',
+    'cbv', #class based views tutorial
 )
 
 MIDDLEWARE_CLASSES = (
