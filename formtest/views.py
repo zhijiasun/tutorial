@@ -8,9 +8,9 @@ from forms import Contact
 def contact(request):
 	if request.method == "POST":
 		print 'aaaaaaaaaa'
-		form = Contact(request.POST)
-		if form.is_valid():
+		myform = Contact(request.POST)
+		if myform.is_valid():
 			return HttpResponseRedirect('/thanks/')
 	else:
-		form = Contact()
-	return render(request,'form.html',{'form':form,})
+		myform = Contact()
+	return render(request,'form.html',{'form':myform,})

@@ -8,3 +8,5 @@ issue during the coding
 		templates/index.html
 
 	in formtest app, it always find testuser/templates/index.html instead of formtest/templates/index.html, this is not corrcet.
+
+2.how to structure the tempaltes and static directory ?

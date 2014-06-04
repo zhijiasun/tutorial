@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'registration_defaults',
     'rest_auth',
     'cbv', #class based views tutorial
+    'crispy_forms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -118,3 +119,5 @@ REST_FRAMEWORK = {
         }
 REST_REGISTRATION_BACKEND = 'registration.backends.simple.views.RegistrationView'
 # REST_PROFILE_MODULE = 'accounts.UserProfile'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'

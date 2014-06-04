@@ -4,9 +4,10 @@
 <title>
 </title>
 <body>
+{% load crispy_forms_tags %}
 <form action="/formtest/form/" method="post">
 	{% csrf_token %}
-	{{ form.as_p }}
-	<input type="submit" value="Submit"/>
+	{{ form|crispy }}
+	<!-- <input type="submit" value="Submit"/> -->
 </form>
 </body>
