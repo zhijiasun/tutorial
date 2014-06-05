@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect,HttpRequest
-from forms import Contact
+from forms import *
 
 # Create your views here.
+def example(request):
+    exampleform = ExampleForm()
+    return render(request,'exampleform.html',{'exampleform':exampleform,})
+
 
 
 def contact(request):
 	if request.method == "POST":
-		print 'aaaaaaaaaa'
 		myform = Contact(request.POST)
 		if myform.is_valid():
 			return HttpResponseRedirect('/thanks/')

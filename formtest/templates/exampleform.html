@@ -2,9 +2,6 @@
 {% load crispy_forms_tags %}
 {% block body %}
 <form action="/formtest/form/" method="post">
-	<!-- {% csrf_token %} -->
-	<!-- {{ form|crispy }} -->
-	<!-- <input type="submit" value="Submit"/> -->
-    {% crispy form %}
+    {% crispy exampleform %}
 </form>
 {% endblock %}
