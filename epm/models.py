@@ -1,3 +1,4 @@
+#coding:utf-8
 from django.db import models
 
 # Create your models here.
@@ -28,7 +29,7 @@ class enterprise(models.Model):
 
 
 class party(models.Model):
-	party_id = models.AutoField(primary_key=True,auto_created=True)
+	# party_id = models.AutoField(primary_key=True,auto_created=True)
 	party_name = models.CharField(u'党支部名称',max_length=100)
 	member_number = models.IntegerField(u'党员人数')
 	contact_info = models.CharField(u'联系方式',max_length=300)

@@ -53,6 +53,8 @@ INSTALLED_APPS = (
     'rest_auth',
     'cbv', #class based views tutorial
     'crispy_forms',
+    'import_export',
+    'epm',
 )
 
 MIDDLEWARE_CLASSES = (
