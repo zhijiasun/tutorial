@@ -7,8 +7,19 @@ from serializers import *
 from django.views.decorators.csrf import csrf_exempt
 from polls.models import Poll
 import pdb
+from rest.models import Album,Track
 
 # Create your views here.
+@api_view(['GET'])
+def album_list(request):
+    print 'aaaaa'
+    if request.method == 'GET':
+        print 'bbbb'
+    albums = Album.objects.all()
+    print albums
+    aserializer = AlbumSerializer(albums,many=True)
+    print aserializer.data
+    return Response(aserializer.data)
 
 @csrf_exempt
 @api_view(['POST'])
